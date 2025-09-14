@@ -12,4 +12,4 @@ Reference:
 [K. Choudhary, J. Phys.: Condens. Matter 33 (2021) 385501]( https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta)
 
 
-Note: This project was originally developed under the github.com/usnistgov organization and is now maintained here by the lead developer.
+Note: This project was originally developed under the github.com/usnistgov organization. New updates and developments will be carried out here.

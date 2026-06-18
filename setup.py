@@ -5,15 +5,21 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="atomqc",  # Replace with your own username
-    version="2021.10.11",
+    version="2025.10.11",
     author="Kamal Choudhary",
-    author_email="kamal.choudhary@nist.gov",
+    author_email="drkamal@jhu.edu",
     description="atomqc",
     install_requires=[
         "numpy>=1.19.5",
         "scipy>=1.6.3",
-        "jarvis-tools>=2021.07.19",
-        "qiskit",
+        "jarvis-tools",
+        "qiskit>=2.0",
+        "qiskit-aer",
+        "slakonet",
+        "qiskit_algorithms",
+        "spglib",
+        "rustworkx",
+        "phonopy",
         "scikit-learn>=0.24.1",
         "matplotlib>=3.4.1",
         "seaborn>=0.11.2",
@@ -26,7 +32,7 @@ setuptools.setup(
     ],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/usnistgov/atomqc",
+    url="https://github.com/atomgptlab/atomqc",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

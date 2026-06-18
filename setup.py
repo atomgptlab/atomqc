@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="atomqc",  # Replace with your own username
-    version="2025.10.11",
+    version="2025.10.12",
     author="Kamal Choudhary",
     author_email="drkamal@jhu.edu",
     description="atomqc",
@@ -24,7 +24,7 @@ setuptools.setup(
         "matplotlib>=3.4.1",
         "seaborn>=0.11.2",
         "tqdm>=4.60.0",
-        "pandas==1.2.4",
+        "pandas>=1.2.4",
         "pydantic>=1.8.1",
         "flake8>=3.9.1",
         "pycodestyle>=2.7.0",

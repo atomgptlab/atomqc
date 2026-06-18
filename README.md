@@ -132,6 +132,22 @@ out = get_bandstruct(w=w, atoms=atoms, line_density=1, savefig=True)
 
 ---
 
+## Testing
+
+A small, fast test suite covers the core Hamiltonian → qubit → VQE pipeline:
+
+```bash
+pip install pytest
+pytest atomqc/tests/
+```
+
+The tests in `atomqc/tests/test_qiskit.py` build a small synthetic Hermitian `H(k)`,
+decompose it into Pauli strings, and check that VQE reproduces the exact NumPy ground state.
+They run offline in a few seconds (no JARVIS downloads), which is also what CI runs on every
+push.
+
+---
+
 ## Repository layout
 
 ```
@@ -143,6 +159,8 @@ atomqc/
 │   │   ├── circuit_comparison.py   # compare ansätze from QuantumCircuitLibrary
 │   │   ├── compare_elect_vqe.py    # batch electron VQE vs NumPy over JARVIS jids
 │   │   └── compare_phonons_vqe.py  # batch phonon VQE vs NumPy over JARVIS jids
+│   ├── tests/
+│   │   └── test_qiskit.py          # fast offline tests: H(k) -> Pauli -> VQE
 │   └── data/
 │       ├── electron_vqe_np_jid.csv # benchmark: electron VQE vs classical
 │       └── phonon_vqe_np_jid.csv   # benchmark: phonon VQE vs classical

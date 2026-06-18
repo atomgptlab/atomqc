@@ -150,6 +150,22 @@ push.
 
 ---
 
+## Documentation
+
+Full documentation is built with [MkDocs](https://www.mkdocs.org/) (Material theme). The
+sources live under `docs/` and the site config is `mkdocs.yml`.
+
+```bash
+pip install mkdocs-material
+mkdocs serve     # live preview at http://127.0.0.1:8000
+mkdocs build     # render static site into ./site
+```
+
+Pages: Installation, Quick start, Methods (VQE / ADAPT-VQE / VQD), Example scripts,
+Testing, Web app, and Citation.
+
+---
+
 ## Repository layout
 
 ```

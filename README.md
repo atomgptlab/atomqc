@@ -6,7 +6,7 @@
 
 AtomQC is a toolkit for running materials-science electronic-structure and lattice-dynamics
 calculations on quantum computers and quantum simulators. It maps the *Wannier tight-binding
-Hamiltonians* (WTBH) of real materials — taken from the [JARVIS-DFT](https://jarvis.nist.gov/jarvisdft/)
+Hamiltonians* (WTBH) of real materials — taken from the [JARVIS-DFT](https://atomgpt.org/materials_explorer)
 database — onto qubits and solves for their eigenvalues using variational quantum algorithms such
 as the **Variational Quantum Eigensolver (VQE)**, **ADAPT-VQE**, and the **Variational Quantum
 Deflation (VQD)** method. From these eigenvalues it reconstructs electronic and phonon
@@ -18,10 +18,6 @@ The approach is described in:
 > *J. Phys.: Condens. Matter* **33**, 385501 (2021).
 > [doi:10.1088/1361-648X/ac1154](https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta)
 
-Related work on AI-driven atomistic modeling:
-
-> **AtomGPT and generative materials design**, *J. Comput. Chem.* (2025).
-> [doi:10.1002/jcc.70202](https://onlinelibrary.wiley.com/doi/full/10.1002/jcc.70202)
 
 > **Note:** This project was originally developed under the
 > [github.com/usnistgov](https://github.com/usnistgov) organization. New updates and developments
@@ -66,6 +62,12 @@ AtomQC provides the glue between:
 AtomQC targets Python ≥ 3.8 and builds on `jarvis-tools` and `qiskit`.
 
 ### From source
+
+```bash
+pip install atomqc
+```
+
+or
 
 ```bash
 git clone https://github.com/atomgptlab/atomqc.git
@@ -190,26 +192,8 @@ It lets you pick a material, choose a back end, and run VQE / ADAPT-VQE at a sin
 compute a full VQD bandstructure — all from the browser, with live circuit diagrams, statevector /
 Bloch-sphere visualizations, and the Hamiltonian matrix shown alongside the results.
 
-The web app is implemented in the AtomGPT / Open WebUI backend:
 
-- **Routes:** `my-open-webui/backend/open_webui/custom_routes/quantum.py`
-- **UI:** `my-open-webui/backend/open_webui/custom_templates/quantum.html`
-
-Endpoints exposed by the app:
-
-| Method & path | Purpose |
-| --- | --- |
-| `GET  /quantum` | Serves the interactive HTML page. |
-| `POST /quantum/vqe` | Run Qiskit VQE at a single `k`-point. |
-| `POST /quantum/adaptvqe` | Run Qiskit ADAPT-VQE at a single `k`-point. |
-| `POST /quantum/bandstructure` | Full VQD bandstructure via `get_bandstruct`. |
-| `GET  /quantum/materials` | List the available demo WTBHs. |
-| `GET  /quantum/backends` | List available simulator/hardware back ends. |
-
-Demo materials include FCC Al, diamond Si, hexagonal PbS, and FCC Cu (electron Hamiltonians) plus
-Al and Si phonon Hamiltonians. The same JARVIS-DFT + `HermitianSolver` machinery used in the
-scripts powers the app; it adds modern `qiskit>=1.2` primitives, optional IBM Quantum hardware
-execution, and per-qubit Bloch-vector / statevector extraction for visualization.
+SlaKoNet-VQD Coming soon!
 
 ---
 
@@ -238,7 +222,7 @@ If you use AtomQC in your research, please cite:
 - 📄 Related: [J. Comput. Chem. (2025), doi:10.1002/jcc.70202](https://onlinelibrary.wiley.com/doi/full/10.1002/jcc.70202)
 - 🌐 Web app: [atomgpt.org/quantum](https://atomgpt.org/quantum)
 - 📓 Colab notebook: [Qiskit-based electronic bandstructure](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Qiskit_based_electronic_bandstructure_.ipynb)
-- 🧰 JARVIS-Tools: [github.com/usnistgov/jarvis](https://github.com/usnistgov/jarvis)
+- 🧰 JARVIS-Tools: [github.com/atomgptlab/jarvis](https://github.com/atomgptlab/jarvis)
 - ⚛️ Qiskit: [qiskit.org](https://www.qiskit.org/)
 
 ---
